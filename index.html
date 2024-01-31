@@ -1,0 +1,599 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce website</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            position: relative;
+        }
+
+        .section {
+            position: relative;
+        }
+
+        .firstbg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top right;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+        }
+
+        .nav h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            margin-left: 31px;
+        }
+
+        .nav img {
+            width: 45px;
+            height: 35px;
+            position: fixed;
+            left: 96%;
+
+        }
+
+        .maincontainer {
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            width: 579px;
+            height: 100px;
+            top: 30%;
+            margin-left: 125px;
+        }
+
+        .mainhead {
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-right: auto;
+        }
+
+        .mainbody {
+            color: white;
+            font-size: 20px;
+            line-height: 1.65;
+        }
+
+        .shoplink {
+            color: orange;
+            border: 2px solid orange;
+            border-radius: 10px;
+            padding: 10px 45px;
+            text-decoration: none;
+            margin-top: 35px;
+            position: relative;
+            right: 36%;
+            transition: all .2s;
+        }
+
+        .shoplink:hover {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .producthead {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .productscontainer {
+            display: grid;
+            grid-template-rows: 300px 150px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin: 100px;
+        }
+
+        .necklace1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 30px;
+            height: 303px;
+            width: 350px;
+            background-color: #dee1e4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .n1 {
+            background-color: white;
+            border-radius: 50%;
+            padding: 10px;
+            position: absolute;
+            top: 3%;
+            left: 3%;
+
+        }
+
+        .jew1 {
+            height: 176px;
+            width: 199px;
+            object-fit: contain;
+        }
+
+        .name {
+            position: absolute;
+            left: 3%;
+            bottom: 3%;
+            font-weight: 500;
+            font-size: 23px;
+        }
+
+        .price {
+            position: absolute;
+            right: 3%;
+            bottom: 3%;
+            font-weight: 500;
+            font-size: 23px;
+        }
+
+        .amount {
+            color: orange;
+        }
+
+
+
+        .viewproduct {
+            text-decoration: none;
+            color: white;
+            background-color: #fd9c6b;
+            border: 1px solid #fd9c6b;
+            border-radius: 5px;
+            width: 203px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 13% 40%;
+            transition: all .2s;
+        }
+
+        .viewproduct:hover {
+            background-color: white;
+            border: 1px solid #fd9c6b;
+            color: #fd9c6b;
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 68%;
+            height: 30%;
+            margin: 13%;
+        }
+
+        .about-img {
+            width: 700px;
+            height: 445px;
+            object-fit: contain;
+        }
+
+        .about-head {
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 410px;
+            margin-bottom: 10px;
+        }
+
+        .para {
+            font-size: 20px;
+            line-height: 1.5rem;
+        }
+
+        .details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 30px;
+        }
+
+        .read {
+            text-decoration: none;
+            color: white;
+            background-color: #fd9c6b;
+            border: 1px solid #fd9c6b;
+            border-radius: 5px;
+            width: 203px;
+            height: 50px;
+            padding: 10px 45px;
+            margin-right: 352px;
+            margin-top: 59px;
+            transition: all .2s;
+            display: inline-block;
+        }
+
+        .read:hover {
+            background-color: white;
+            border: 1px solid #fd9c6b;
+            color: #fd9c6b;
+        }
+
+        .sale {
+            display: grid;
+            grid-template-columns: 1011px 701px;
+            grid-template-rows: [first-row]351px [doosra-row] 299px;
+            margin: 69px;
+        }
+
+        .sale3 {
+            grid-row: -1/-2;
+            grid-column: -1/-2;
+        }
+
+        .saleimg {
+            width: 1000px;
+            height: 651px;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .saleimg2 {
+            width: 699px;
+            height: 298px;
+            z-index: 1;
+        }
+
+        .saleimg1 {
+            width: 699px;
+            height: 338px;
+            z-index: 1;
+        }
+
+        .aboutsale {
+            display: flex;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            width: 579px;
+            height: 100px;
+            top: 2%;
+            right: 72%;
+            margin-left: 125px;
+        }
+
+        .aboutsale2 {
+            display: flex;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            width: 579px;
+            height: 100px;
+            top: 30%;
+            right: 0%;
+            margin-left: 125px;
+        }
+
+        .aboutsale3 {
+            display: flex;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            width: 579px;
+            height: 100px;
+            top: 80%;
+            right: 19%;
+            margin-left: 125px;
+        }
+
+        .discount {
+            font-size: 50px;
+            color: white;
+        }
+
+        .shopnow {
+            color: orange;
+            border: 2px solid orange;
+            border-radius: 10px;
+            padding: 10px 45px;
+            text-decoration: none;
+            margin-top: 35px;
+            position: relative;
+            right: 13%;
+            transition: all .2s;
+        }
+
+        .pos {
+            position: relative;
+        }
+
+        .shopnow:hover {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .discount1 {
+            font-size: 40px;
+            color: white;
+        }
+
+        .blogheading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 10px;
+        }
+
+        .blogheading h1 {
+            font-weight: bold;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+        .bloggrid {
+            display: grid;
+            grid-template-columns: 614px 599px;
+            gap: 10px;
+            margin: 67px 337px;
+            position: relative;
+        }
+
+        .blog_date {
+            position: absolute;
+            left: 31px;
+            bottom: 210px;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #160e0b;
+
+            text-align: center;
+            border: 3px solid #fff;
+            color: #fff;
+        }
+
+        .blog_date2 {
+            position: absolute;
+            bottom: 210px;
+            left: 641px;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #160e0b;
+            text-align: center;
+            border: 3px solid #fff;
+            color: #fff;
+        }
+
+        .july,
+        .july2 {
+            width: 600px;
+            height: 678px;
+            background-color: #dee1e4;
+        }
+        .newdetails{
+            margin: 35px;
+        }
+        .newdetails h4{
+            font-size: 37px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .newdetails p{
+            line-height: 1.5rem;
+            font-size: 20px;
+        }
+        .readme{
+            color: black;
+            text-decoration: none;
+            border: 1px solid black;
+            padding: 10px 30px;
+            transition: all .2s;
+            position: absolute;
+            bottom: 26px;
+        }
+        .readme:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="heading">
+                <h1>Healet</h1>
+            </div>
+            <img src="menu.png" alt="">
+        </div>
+        <img src="first bg.jpg" alt="" class="firstbg">
+
+    </header>
+    <section>
+        <div class="maincontainer">
+            <h1 class="mainhead">Best Jewellery <br> Collection</h1>
+            <p class="mainbody">It is a long established fact that a reader will be distracted by the <br> readable
+                content of a page when looking at its layout. The point of using Lorem.</p>
+            <a href="#" class="shoplink">Show Now</a>
+        </div>
+    </section>
+    <main>
+        <div class="heading">
+            <h1 class="producthead">latest products</h1>
+        </div>
+        <div class="productscontainer">
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament1.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament2.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament3.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament4.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament5.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament6.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament7.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+
+            <div class="necklace1">
+                <span class="n1"> New</span>
+                <img src="ornament8.png" alt="" class="jew1">
+                <span class="name">Necklace</span>
+                <span class="price">Price <span class="amount">$200</span></span>
+            </div>
+        </div>
+
+        <a href="#" class="viewproduct">View All Products</a>
+        <section>
+            <div class="about">
+                <img src="about-img.jpg" alt="" class="about-img">
+                <div class="details">
+                    <h1 class="about-head">About Us</h1>
+                    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque odio quidem
+                        fugit nobis modi quaerat dicta deserunt mollitia, voluptatum ipsa. Temporibus eius modi esse,
+                        doloremque eum consectetur libero cum!</p>
+
+                    <a href="#" class="read">read more</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="pos">
+            <div class="sale">
+                <div class="sale1">
+                    <img src="sale1.jpg" alt="" class="saleimg">
+                    <div class="aboutsale">
+                        <h1 class="discount">Upto 15% Off</h1>
+                        <a href="#" class="shopnow">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="sale2">
+                    <img src="sale2.jpg" alt="" class="saleimg1">
+                    <div class="aboutsale2">
+                        <h1 class="discount1">Upto 10% Off</h1>
+                        <a href="#" class="shopnow">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="sale3">
+                    <img src="sale3.jpg" alt="" class="saleimg2">
+                    <div class="aboutsale3">
+                        <h1 class="discount1">Upto 10% Off</h1>
+                        <a href="#" class="shopnow">Shop Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <div class="blogheading">
+                <h1>latest from blog</h1>
+            </div>
+            <div class="bloggrid">
+                <div class="july">
+                    <img src="Person1.jpg" alt="" class="person1">
+                    <h4 class="blog_date">14 <br>July</h4>
+                    <div class="newdetails">
+                        <h4 >Lorem ipsum dolor sit.
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, at a
+                            officia
+                            accusantium labore voluptate!</p>
+                        <a href="#" class="readme">read more</a>
+                    </div>
+                </div>
+                <div class="july2">
+                    <img src="Person2.jpg" alt="" class="person2">
+                    <h4 class="blog_date2">15 <br>July</h4>
+                    <div class="newdetails">
+                        <h4 >Lorem ipsum dolor sit.
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, at a
+                            officia
+                            accusantium labore voluptate!</p>
+                        <a href="#" class="readme">read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
